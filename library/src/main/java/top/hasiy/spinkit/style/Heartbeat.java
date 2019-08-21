@@ -43,7 +43,7 @@ public class Heartbeat extends SpriteContainer {
 
     private class CircleTwo extends CircleSprite {
         CircleTwo() {
-            setAlpha(240);
+            setAlpha(220);
             setScale(0f);
         }
 

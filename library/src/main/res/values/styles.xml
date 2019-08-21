@@ -69,6 +69,10 @@
         <item name="SpinKit_Style">MultiplePulseRing</item>
     </style>
 
+    <style name="SpinKitView.Heartbeat">
+        <item name="SpinKit_Style">Heartbeat</item>
+    </style>
+
     <style name="SpinKitView.Large">
         <item name="android:minWidth">76dip</item>
         <item name="android:maxWidth">76dip</item>
@@ -136,6 +140,10 @@
         <item name="SpinKit_Style">MultiplePulseRing</item>
     </style>
 
+    <style name="SpinKitView.Large.Heartbeat">
+        <item name="SpinKit_Style">Heartbeat</item>
+    </style>
+
     <style name="SpinKitView.Small">
         <item name="android:minWidth">16dip</item>
         <item name="android:maxWidth">16dip</item>
@@ -201,5 +209,9 @@
 
     <style name="SpinKitView.Small.MultiplePulseRing">
         <item name="SpinKit_Style">MultiplePulseRing</item>
+    </style>
+
+    <style name="SpinKitView.Small.Heartbeat">
+        <item name="SpinKit_Style">Heartbeat</item>
     </style>
 </resources>

@@ -1,9 +1,10 @@
 # Android-SpinKit
->Android loading animations(I wrote a android edition according [SpinKit](https://github.com/tobiasahlin/SpinKit))
+>Android loading animations(I wrote a android edition according [SpinKit](https://tobiasahlin.com/spinkit))
+ from([Android-SpinKit](https://ybq.github.io/Android-SpinKit) add Heartbeat
 
 ## Preview
 
-<img src="https://raw.githubusercontent.com/ybq/AndroidSpinKit/master/art/screen.gif" width="240px" height="240px"/>
+<img src="http://ww1.sinaimg.cn/large/8c95cb62gy1g678umt2q5g208w08xn2k.gif" width="240px" height="240px"/>
 
 <img src="https://raw.githubusercontent.com/ybq/AndroidSpinKit/master/art/screen2.gif" width="200px" height="200px"/>
 
@@ -11,7 +12,7 @@
 
  ``` gradle
 dependencies {
-    implementation 'com.github.ybq:Android-SpinKit:1.2.0'
+    implementation "top.hasiy:Android-SpinKit:1.0.0"
  }
  ```
 
@@ -20,7 +21,7 @@ dependencies {
 - Xml
 
  ```xml
-<com.github.ybq.android.spinkit.SpinKitView
+<top.hasiy.spinkit.SpinKitView
      xmlns:app="http://schemas.android.com/apk/res-auto"
      android:id="@+id/spin_kit"
      style="@style/SpinKitView.Large.Circle"
@@ -28,15 +29,15 @@ dependencies {
      android:layout_height="wrap_content"
      android:layout_gravity="center"
      app:SpinKit_Color="@color/colorAccent" />         
-```
- 
+ ```
+
 - ProgressBar
 
  ```java
 ProgressBar progressBar = (ProgressBar)findViewById(R.id.progress);
 Sprite doubleBounce = new DoubleBounce();
 progressBar.setIndeterminateDrawable(doubleBounce);
-```
+ ```
 
 ## Style
 > 
@@ -62,11 +63,7 @@ CubeGrid         | <img src='https://raw.githubusercontent.com/ybq/AndroidSpinKi
 FadingCircle     | <img src='https://raw.githubusercontent.com/ybq/AndroidSpinKit/master/art/FadingCircle.gif' alt='FadingCircle' width="90px" height="90px"/>
 FoldingCube      | <img src='https://raw.githubusercontent.com/ybq/AndroidSpinKit/master/art/FoldingCube.gif' alt='FoldingCube' width="90px" height="90px"/>
 RotatingCircle   | <img src='https://raw.githubusercontent.com/ybq/AndroidSpinKit/master/art/RotatingCircle.gif' alt='RotatingCircle' width="90px" height="90px"/>
-
-
-
-
-
+Heartbeat        | <img src='http://ww1.sinaimg.cn/large/8c95cb62gy1g679fzbszeg208w08ytge.gif' alt='Heartbeat' width="90px" height="90px"/>
 
 
 ## Acknowledgements

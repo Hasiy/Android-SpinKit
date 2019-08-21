@@ -19,6 +19,8 @@
             <enum name="MultiplePulse" value="12" />
             <enum name="PulseRing" value="13" />
             <enum name="MultiplePulseRing" value="14" />
+            <enum name="Heartbeat" value="15" />
+
         </attr>
         <attr name="SpinKit_Color" format="color" />
     </declare-styleable>

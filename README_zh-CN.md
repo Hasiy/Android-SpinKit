@@ -1,31 +1,27 @@
-
 # Android-SpinKit
- 
-> Android 加载动画(参照[SpinKit](https://github.com/tobiasahlin/SpinKit)写了个android版本)
+> Android 加载动画([SpinKit](https://tobiasahlin.com/spinkit)的Android版本实现)
+ 原项目[Android-SpinKit](https://ybq.github.io/Android-SpinKit)  添加 Heartbeat效果
 
 ## 效果
 
-<img src="https://raw.githubusercontent.com/ybq/AndroidSpinKit/master/art/screen.gif" width="240px" height="240px"/>
- 
+<img src="http://ww1.sinaimg.cn/large/8c95cb62gy1g678umt2q5g208w08xn2k.gif" width="240px" height="240px"/>
 
 <img src="https://raw.githubusercontent.com/ybq/AndroidSpinKit/master/art/screen2.gif" width="200px" height="200px"/>
 
 ## Gradle 依赖
 
-  2. 添加依赖
-
  ``` gradle
 dependencies {
-    compile 'com.github.ybq:Android-SpinKit:1.2.0'
+    implementation "top.hasiy:Android-SpinKit:1.0.0"
  }
-```
+ ```
 
 
 ## 使用
 - Xml
 
  ```xml
-<com.github.ybq.android.spinkit.SpinKitView
+<top.hasiy.spinkit.SpinKitView
      xmlns:app="http://schemas.android.com/apk/res-auto"
      android:id="@+id/spin_kit"
      style="@style/SpinKitView.Large.Circle"
@@ -34,15 +30,15 @@ dependencies {
      android:layout_gravity="center"
      app:SpinKit_Color="@color/colorAccent" />         
  ```
- 
- 
+
+
 - ProgressBar
 
  ```java
 ProgressBar progressBar = (ProgressBar)findViewById(R.id.progress);
 DoubleBounce doubleBounce = new DoubleBounce();
 progressBar.setIndeterminateDrawable(doubleBounce);
-```
+ ```
 
 ###样式:
 
@@ -60,15 +56,8 @@ CubeGrid         | <img src='https://raw.githubusercontent.com/ybq/AndroidSpinKi
 FadingCircle     | <img src='https://raw.githubusercontent.com/ybq/AndroidSpinKit/master/art/FadingCircle.gif' alt='FadingCircle' width="90px" height="90px"/>
 FoldingCube      | <img src='https://raw.githubusercontent.com/ybq/AndroidSpinKit/master/art/FoldingCube.gif' alt='FoldingCube' width="90px" height="90px"/>
 RotatingCircle   | <img src='https://raw.githubusercontent.com/ybq/AndroidSpinKit/master/art/RotatingCircle.gif' alt='RotatingCircle' width="90px" height="90px"/>
-
-
-
-
-
+Heartbeat        | <img src='http://ww1.sinaimg.cn/large/8c95cb62gy1g679fzbszeg208w08ytge.gif' alt='Heartbeat' width="90px" height="90px"/>
 
 
 ##感谢
 - [SpinKit](https://github.com/tobiasahlin/SpinKit).
-
-
-

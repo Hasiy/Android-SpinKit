@@ -1,11 +1,14 @@
 apply plugin: 'com.android.library'
 apply plugin: 'com.novoda.bintray-release'
 
-android {
 
+def groupIdDefined = "top.hasiy"
+def artifactIdDefined = "Android-SpinKit"
+def versionDefined = "1.0.0"
+
+android {
     compileSdkVersion 28
     buildToolsVersion '28.0.3'
-
     defaultConfig {
         minSdkVersion 14
         targetSdkVersion 28
@@ -16,13 +19,78 @@ android {
     }
 }
 
-
 publish {
-    userOrg = 'ybq'
-    groupId = 'com.github.ybq'
+    userOrg = 'Hasiy'
+    groupId = 'top.Hasiy'
     artifactId = 'Android-SpinKit'
-    publishVersion = '1.2.0'
+    publishVersion = '1.0.0'
     desc = 'Android loading animations'
-    website = 'https://github.com/ybq/Android-SpinKit'
+    website = 'https://github.com/Hasiy/Android-SpinKit'
     licences = ['MIT']
+}
+
+android.libraryVariants.all { variant ->
+    variant.outputs.all {
+        outputFileName = "${artifactIdDefined}-${versionDefined}.aar"
+    }
+}
+
+task createPom {
+    apply plugin: 'maven'
+    description "create Pom for spinkitprogressbar"
+    doLast {
+        pom {
+            project {
+                groupId "${groupIdDefined}"
+                artifactId "${artifactIdDefined}"
+                version "${versionDefined}"
+                packaging "aar"
+                licenses {
+                    license {
+                        name 'Massachusetts Institute of Technology'
+                        url 'https://www.mit.edu/~amini/LICENSE.md'
+                    }
+                }
+            }
+        }.withXml {
+            //一定要有不然  依赖会缺失
+            def dependenciesNode = asNode().appendNode('dependencies')
+            configurations.implementation.allDependencies.each { dependency ->
+                def dependencyNode = dependenciesNode.appendNode('dependency')
+                dependencyNode.appendNode('groupId', dependency.group)
+                dependencyNode.appendNode('artifactId', dependency.name)
+                dependencyNode.appendNode('version', dependency.version)
+            }
+        }.writeTo("${artifactIdDefined}-${versionDefined}.pom")
+    }
+}
+
+// 生成Java源码jar文件
+task sourcesJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+    baseName = "${artifactIdDefined}-${versionDefined}"
+    classifier = 'sources'
+}
+
+// 生成Javadoc文件
+task javadoc(type: Javadoc) {
+    failOnError false
+    source = android.sourceSets.main.java.srcDirs
+    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+    classpath += configurations.compile
+    options.encoding = "utf-8"
+    options.charSet = "utf-8"
+}
+
+afterEvaluate {
+    javadoc.classpath += files(android.libraryVariants.collect { variant ->
+        variant.javaCompileProvider.get().classpath.files
+    })
+}
+
+// 生成Javadoc_jar文件
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    baseName = "${artifactIdDefined}-${versionDefined}"
+    classifier = 'javadoc'
+    from javadoc.destinationDir
 }

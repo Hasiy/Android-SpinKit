@@ -1,6 +1,7 @@
 # Android-SpinKit
 >Android loading animations(I wrote a android edition according [SpinKit](https://tobiasahlin.com/spinkit))
- from([Android-SpinKit](https://ybq.github.io/Android-SpinKit) add Heartbeat
+
+ from[Android-SpinKit](https://ybq.github.io/Android-SpinKit) add Heartbeat
 
 ## Preview
 

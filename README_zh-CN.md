@@ -1,5 +1,6 @@
 # Android-SpinKit
 > Android 加载动画([SpinKit](https://tobiasahlin.com/spinkit)的Android版本实现)
+
  原项目[Android-SpinKit](https://ybq.github.io/Android-SpinKit)  添加 Heartbeat效果
 
 ## 效果

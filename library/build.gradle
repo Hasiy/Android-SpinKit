@@ -4,7 +4,7 @@ apply plugin: 'com.novoda.bintray-release'
 
 def groupIdDefined = "top.hasiy"
 def artifactIdDefined = "Android-SpinKit"
-def versionDefined = "1.0.0"
+def versionDefined = "1.0.1"
 
 android {
     compileSdkVersion 28
@@ -23,7 +23,7 @@ publish {
     userOrg = 'Hasiy'
     groupId = 'top.Hasiy'
     artifactId = 'Android-SpinKit'
-    publishVersion = '1.0.0'
+    publishVersion = '1.0.1'
     desc = 'Android loading animations'
     website = 'https://github.com/Hasiy/Android-SpinKit'
     licences = ['MIT']
